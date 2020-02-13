@@ -1,0 +1,13 @@
+.App {
+  min-height: 100vh;
+  display: flex;
+  font-size: calc(16px);
+}
+
+.App-body {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 1024px;
+}

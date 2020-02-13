@@ -1,0 +1,27 @@
+{
+  "name": "app-next",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theogoulart/nextjs-music-app.git"
+  },
+  "author": "theogoulart",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/theogoulart/nextjs-music-app/issues"
+  },
+  "homepage": "https://github.com/theogoulart/nextjs-music-app#readme",
+  "dependencies": {
+    "isomorphic-unfetch": "^3.0.0",
+    "next": "^9.2.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  }
+}
