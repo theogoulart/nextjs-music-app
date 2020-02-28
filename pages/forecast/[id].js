@@ -12,14 +12,17 @@ function Forecast (props) {
 
     return (
         <Layout>
-            <h1>
-                {`${props.city}, ${props.country}`}
-            </h1>
-            <h2 className="mb-3">
-                <small>{formatedCurDate}</small>
-            </h2>
+            <div className="heading">
+                <div>
+                <h1>
+                    <small>Weather in</small> <strong>{`${props.city}, ${props.country}`}</strong>
+                </h1>
+                <p>
+                    on <strong style={{color: '#fff'}}>{formatedCurDate}</strong>
+                </p>
+                </div>
+            </div>
             <div className="weather__container">
-
                 <div className="card text-white m-1 text-left">
                     <div className="card-body">
                     {props.forecasts.map((v,i,a) => {
@@ -36,6 +39,13 @@ function Forecast (props) {
                 </div>
             </div>
             <style jsx>{`
+            .heading {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 81px;
+                width: 100%;
+            }
+
             .weather__container, .card-body {
                 display: flex;
                 flex-wrap: wrap;

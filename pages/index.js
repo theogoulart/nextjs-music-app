@@ -4,10 +4,10 @@ import Weather from './components/Weather/index';
 import Select from 'react-select';
 
 const options = [
-    { value: '3448439', label: 'São Paulo' },
-    { value: '3451190', label: 'Rio de Janeiro' },
-    { value: '6322752', label: 'Curitiba' },
-    { value: '3394023', label: 'Natal' },
+    { value: '3448439', label: 'São Paulo, BR' },
+    { value: '3451190', label: 'Rio de Janeiro, BR' },
+    { value: '6322752', label: 'Curitiba, BR' },
+    { value: '3394023', label: 'Natal, BR' },
 ];
 
 class App extends React.Component {
@@ -55,18 +55,21 @@ class App extends React.Component {
                     <h1>
                         <small>Weather in</small> <strong>{`${this.state.city}, ${this.state.country}`}</strong>
                     </h1>
-                    <Select
-                        value={this.state.cityId}
-                        onChange={this.handleChange}
-                        options={options}
-                    />
+                    <div style={{width: '200px'}}>
+                        <Select
+                            width="200px"
+                            value={this.state.cityId}
+                            onChange={this.handleChange}
+                            options={options}
+                            placeholder="Select a city"
+                        />
+                    </div>
                 </div>
                 <div className="weather__container">
                     {this.state.forecasts.map((v,i,a) => {
-                        let curDate = new Date(v.dt * 1000).getDate();
-                        let prevDate = i !== 0 ? new Date(a[i-1].dt * 1000).getDate() : false;
+                        const itemTime = new Date(v.dt * 1000).getHours();
 
-                        if (curDate === prevDate) {
+                        if (i !== 0 && itemTime !== 12) {
                             return;
                         }
 
@@ -77,7 +80,7 @@ class App extends React.Component {
                 .heading {
                     display: flex;
                     justify-content: space-between;
-                    margin-bottom: 27px;
+                    margin-bottom: 81px;
                     width: 100%;
                 }
 
