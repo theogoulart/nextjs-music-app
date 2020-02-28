@@ -18,9 +18,13 @@ function Weather(props) {
     break;
   }
 
+  const queryDate = date.getFullYear() + 
+    '-' + (date.getMonth() + 1) + 
+    '-' + date.getDate();
+
   return (
-    <Link href="/about">
-      <button className="card text-white m-2 text-left">
+    <Link href="/forecast/[id].js" as={`/forecast/${props.id}?date=${queryDate}`}>
+      <button className="card text-white m-1 text-left">
         <div className="card-body">
           <img className="mb-2" height="100" width="100" src={"http://openweathermap.org/img/wn/" + props.info.weather[0].icon + "@2x.png"} />
           <p>{parseInt(props.info.main['temp'])}ºC</p>
