@@ -1,6 +1,6 @@
 import fetch from 'isomorphic-unfetch';
-import Layout from './components/Layout/index';
-import Weather from './components/Weather/index';
+import Layout from '../components/Layout/index';
+import Weather from '../components/Weather/index';
 import Select from 'react-select';
 
 const options = [

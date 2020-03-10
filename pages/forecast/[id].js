@@ -1,6 +1,6 @@
 import fetch from 'isomorphic-unfetch';
-import Layout from '../components/Layout/index';
-import Hour from '../components/Hour/index';
+import Layout from '../../components/Layout/index';
+import Hour from '../../components/Hour/index';
 
 function Forecast (props) {
     const monthNames = ["January", "February", "March", "April", "May", "June",
